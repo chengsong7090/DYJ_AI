@@ -1,11 +1,28 @@
-# Default client codes (as strings to preserve leading zeros)
-DEFAULT_CLIENT_CODES = ['118095', '051851', '915310', '912812', '207188']
+import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
+
+# OpenAI API Configuration
+OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
+
+# Default client codes for caching
+DEFAULT_CLIENT_CODES = [
+    '051851',
+    '051852',
+    '051853'
+]
 
 # File paths
 TRADE_HISTORY_FILE = r"C:\Users\cheng\OneDrive\Desktop\DYJ\Cursor\DYJ_AI\GTJA_Files\Trade History_as_at_20250105_20250303.xls"
 
-# Numeric columns to clean
-NUMERIC_COLUMNS = ['Quantity', 'Executed_Price', 'Consideration']
+# Numeric columns that need cleaning
+NUMERIC_COLUMNS = [
+    'Quantity',
+    'Executed_Price',
+    'Consideration'
+]
 
 # Pivot table column configurations
 PIVOT_REQUIRED_COLUMNS = [
